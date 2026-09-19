@@ -1,0 +1,20 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Ambientes virtuais
+venv/
+.venv/
+env/
+ENV/
+
+# Banco de dados (quando chegarmos na Fase 3)
+*.sqlite3
+*.db
+
+# Editor / Sistema Operacional
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db

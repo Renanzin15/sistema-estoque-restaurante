@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Controle de Estoque</title>
+</head>
+<body>
+    <h1>Controle de Estoque - Bar e Restaurante</h1>
+    <ul>
+        {% for produto in lista_de_produtos %}
+        <li>{{ produto.nome }} - {{ produto.categoria }} - {{ produto.unidade }} {{ produto.quantidade }} - R$ {{ produto.preco }}</li>
+        {% endfor %}
+    </ul>
+</body>
+</html>
