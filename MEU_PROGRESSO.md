@@ -32,6 +32,11 @@ Estoque → Cardápio → Mesas (com garçom e tempo de espera) → Pedidos → 
   - `request.form[...]` pra ler o que foi digitado
   - `.append()` pra adicionar na lista
   - `redirect("/")` pra voltar e ver o resultado
+- [x] **Navegação entre páginas** com links `<a href="...">` (index ↔ adicionar)
+- [x] **CRUD completo!** (Create, Read, Update, Delete)
+  - 🗑️ **Excluir** produto — rota dinâmica `/excluir/<int:indice>` + `.pop(indice)` + `loop.index0` no link
+  - ✏️ **Editar** produto — rota `/editar/<int:indice>` (GET mostra form preenchido com `value="{{ produto.campo }}"`, POST salva com `produtos[indice]["campo"] = request.form["campo"]`)
+  - Aprendi **rotas dinâmicas**: `<int:indice>` captura um número da URL
 
 ---
 
@@ -71,6 +76,18 @@ D:\Claude\estoque\
 
 ---
 
+## 🐙 GitHub (portfólio)
+- Repositório: **https://github.com/Renanzin15/sistema-estoque-restaurante** (público)
+- Branch principal: `main`
+- **Ciclo pra subir mudanças novas** (a cada avanço):
+  ```bash
+  git add .
+  git commit -m "descreve o que fez"
+  git push
+  ```
+
+---
+
 ## ▶️ Como rodar
 1. Abrir o terminal na pasta `estoque`
 2. Rodar: `python app.py`
@@ -81,12 +98,11 @@ D:\Claude\estoque\
 ---
 
 ## 🚧 ONDE A GENTE CONTINUA (próximo passo)
-Eu terminei o **cadastro de produtos (Create)**. Os próximos passos, em ordem sugerida:
+Eu terminei o **CRUD completo** (criar, listar, editar, excluir) + navegação. Os próximos passos, em ordem sugerida:
 
-1. 🔗 **Link de navegação** entre a página inicial e o `/adicionar` (rapidinho e satisfatório)
-2. ✏️ **Editar e excluir** produtos (completar o CRUD: Create, Read, Update, Delete)
-3. 🔍 **Filtrar** por categoria (Bar / Cozinha)
-4. 💾 **Banco de dados (SQLite)** — pra os produtos **não sumirem** quando o servidor reinicia (essa é a "dor" que ainda tenho: hoje os dados vivem só na memória)
+1. 🔍 **Filtrar** por categoria (Bar / Cozinha)
+2. 💾 **Banco de dados (SQLite)** — pra os produtos **não sumirem** quando o servidor reinicia (essa é a "dor" que ainda tenho: hoje os dados vivem só na memória)
+3. Depois: alerta de estoque baixo, e começar os próximos módulos (cardápio, mesas, pedidos)
 
 > ⚠️ Lembrete: hoje, ao reiniciar o servidor, os produtos que adiciono pela tela **somem** (só voltam os 3 do código). Isso é esperado — é o banco de dados que vai resolver.
 

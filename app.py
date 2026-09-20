@@ -35,5 +35,23 @@ def adicionar():
         return redirect("/")
     return render_template("adicionar.html")
 
+@app.route("/excluir/<int:indice>")
+def excluir(indice):
+    produtos.pop(indice)
+    return redirect("/")
+
+@app.route("/editar/<int:indice>", methods=["GET","POST"])
+def editar(indice):
+    if request.method == "POST":
+        produtos[indice]["nome"] = request.form["nome"]
+        produtos[indice]["categoria"] = request.form["categoria"]
+        produtos[indice]["quantidade"] = request.form["quantidade"]
+        produtos[indice]["unidade"] = request.form["unidade"]
+        produtos[indice]["preco"] = request.form["preco"]
+        return redirect("/")
+    
+    produto = produtos[indice]
+    return render_template("editar.html", produto=produto, indice=indice)
+
 if __name__ == "__main__":
     app.run(debug=True)

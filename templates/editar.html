@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+    <head>
+    <meta charset="UTF-8">
+    <title>Editar Produto</title>
+    </head>
+    <body>
+        <h1>Editar Produto</h1>
+        <a href="/">Voltar para o estoque</a>
+
+        <form method="POST" action="/editar/{{ indice  }}">
+            <p>
+                <label>Nome:</label>
+                <input type="text" name="nome" value="{{ produto.nome}}">
+            </p>
+            <p>
+                <label>Categoria:</label>
+                <input type="text" name="categoria" value="{{ produto.categoria }}">
+            </p>
+            <p>
+                <label>Quantidade:</label>
+                <input type="text" name="quantidade" value="{{ produto.quantidade}}">
+            </p>
+            <p>
+                <label>Unidade:</label>
+                <input type="text" name="unidade" value="{{ produto.unidade }}">
+            </p>
+            <p>
+                <label>Preço:</label>
+                <input type="text" name="preco" value="{{ produto.preco }}">
+            </p>
+            <button type="submit">Salvar Alterações</button>
+        </form>
+    </body>
+</html>

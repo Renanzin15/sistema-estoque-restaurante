@@ -8,7 +8,9 @@
     <h1>Controle de Estoque - Bar e Restaurante</h1>
     <ul>
         {% for produto in lista_de_produtos %}
-        <li>{{ produto.nome }} - {{ produto.categoria }} - {{ produto.unidade }} {{ produto.quantidade }} - R$ {{ produto.preco }}</li>
+        <li>{{ produto.nome }} - {{ produto.categoria }} - {{ produto.unidade }} {{ produto.quantidade }} - R$ {{ produto.preco }}
+            <a href="/excluir/{{ loop.index0 }}">🗑️ Excluir</a> <a href="/editar/{{ loop.index0 }}">✏️ Editar</a>
+        </li>
         {% endfor %}
     </ul>
 </body>
