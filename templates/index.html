@@ -6,6 +6,14 @@
 </head>
 <body>
     <h1>Controle de Estoque - Bar e Restaurante</h1>
+    <p>
+        Filtrar:
+        <a href="/">Todos</a> |
+        <a href="/?categoria=Bar">Bar</a> |
+        <a href="/?categoria=Cozinha">Cozinha</a>
+    </p>
+
+        <a href="/adicionar">➕ Adicionar produto</a>
     <ul>
         {% for produto in lista_de_produtos %}
         <li>{{ produto.nome }} - {{ produto.categoria }} - {{ produto.unidade }} {{ produto.quantidade }} - R$ {{ produto.preco }}

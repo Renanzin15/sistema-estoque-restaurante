@@ -12,8 +12,15 @@ produtos= [
 
 @app.route("/")
 def inicio():
-
-    return render_template("index.html", lista_de_produtos=produtos)
+    categoria = request.args.get("categoria")
+    if categoria:
+        lista = []
+        for p in produtos:
+            if p["categoria"] == categoria:
+                lista.append(p)
+    else:
+        lista = produtos
+    return render_template("index.html", lista_de_produtos=lista)
 
 @app.route("/adicionar", methods=["GET", "POST"])
 def adicionar():
